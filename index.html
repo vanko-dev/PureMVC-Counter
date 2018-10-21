@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+
+<head>
+    <!-- PAGE TITLE -->
+    <title>PureMVC_JS Native Demo - Text Reverser</title>
+
+    <!-- CSS STYLES-->
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css" />
+
+
+</head>
+
+<body>
+
+    <label>0</label><br />
+    <button id="add">+</button>&nbsp;
+    <button id="subtract">-</button>
+
+    <!-- PUREMVC LIBRARY -->
+    <script src="lib/js/puremvc-1.0.js"></script>
+
+    <!-- APPLICATION (VIEW/CONTROLLER RELATED) CONSTANTS -->
+    <script src="src/AppConstants.js"></script>
+    <script src="src/ApplicationFacade.js"></script>
+
+    <!-- PROXYS -->
+    <script src="src/model/proxy/CounterProxy.js"></script>
+
+    <!-- COMMANDS -->
+    <script src="src/controller/command/StartupCommand.js"></script>
+    <script src="src/controller/command/PrepareViewCommand.js"></script>
+    <script src="src/controller/command/PrepareModelCommand.js"></script>
+    <script src="src/controller/command/PrepareControllerCommand.js"></script>
+    <script src="src/controller/command/AddCommand.js"></script>
+
+    <!-- VIEW COMPONENTS -->
+    <script src="src/view/component/CounterComponent.js"></script>
+
+    <!-- MEDIATORS -->
+    <script src="src/view/mediator/CounterMediator.js"></script>
+
+    <!-- START THE APPLICATION -->
+    <script>
+        // initialize the app when all DOM content has loaded.			
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // initialize the facade by retrieving an instance and calling startup
+            demo.ApplicationFacade.getInstance(demo.ApplicationFacade.NAME).startup();
+        });
+    </script>
+</body>
+
+</html>
